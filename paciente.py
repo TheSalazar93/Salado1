@@ -1,4 +1,7 @@
 class Paciente:
+    
+    PREVISIONES: set[str] = {"Fonasa", "Isapre", "Otro"}
+    
     def __init__(self, rut:str, nombre:str, edad:int, prevision:str):
         self.rut = rut
         self.edad = edad
@@ -37,7 +40,11 @@ class Paciente:
     def prevision(self, prevision:str)->None:
             self._prevision = str
 
-    
-    
+    def __str__(self)->str:
+          return f"""Informacion del paciente\nRUT: {self.rut}\nNombre: {self.nombre}\nEdad: {self.edad}\nPrevision: {self.prevision}"""
+
+    def __repr__(self)->str:
+              return f"""Paciente(rut={self.rut}, nombre= {self.nombre}, edad= {self.edad}, prevision= {self.prevision})"""
+        
 
     
